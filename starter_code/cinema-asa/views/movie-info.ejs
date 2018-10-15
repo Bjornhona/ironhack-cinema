@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div><img src="<%= result.image %>"/></div>
+  <div class="movie-info">
+    <a href="/movies">Go back</a>
+    <h1><%= result.title %></h1>
+    <h2>Director: <%= result.director %></h2>
+    <h3>Stars</h3>
+    <ul>
+      <% result.stars.forEach(star => { %>
+        <li><%= star %></li>
+      <% }) %>
+      <p><%= result.description %></p>
+      <p><% result.showtimes.forEach(time => { %>
+        <%= time %> |
+      <% }) %> </p>
+    </ul>
+  </div>
+</body>
+</html>
