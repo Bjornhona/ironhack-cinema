@@ -1,11 +1,68 @@
 body {
-  padding: 50px;
+  margin: 0;
+  padding: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  height: 100%;
+}
+
+html {
+  height: 100%;
+}
+
+/* ---- typography ---- */
+
+h1 {
+  color: white;
+  font-size: 72px;
 }
 
 a {
-  color: #00B7FF;
+  color: grey;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px;
 }
+
+/* ---- components ---- */
+
+a.button {
+  background-color: white;
+  padding: 20px 30px;
+  border-radius: 30px;
+}
+
+.delete-button {
+  padding: 20px 30px;
+  margin: 20px;
+}
+
+a.go-button {
+  background-color: cyan;
+  padding: 20px 30px;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  border-radius: 30px;
+  text-align: center;
+}
+
+/* ---- home ---- */
+
+div.home {
+  background-image: url('../images/cinema.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+}
+
+div.ironhack {
+  padding-right: 200px;
+  width: 300px;
+}
+
+/* ---- movie cards ---- */
 
 div.movie-cards {
   display: flex;
@@ -14,4 +71,49 @@ div.movie-cards {
 
 div.movie-card {
   display: flex;
+  flex-direction: column;
+  margin: 80px;
+  text-align: center;
+  align-items: center;
+}
+
+div.movie-pic {
+  box-shadow: 3px 3px 5px grey;
+}
+
+div.ironhack-movies {
+  padding-left: 80px;
+  padding-top: 40px;
+}
+
+/* ---- edit page ---- */
+
+div.edit-page {
+  display: flex;
+  flex-direction: column;
+  padding: 60px;
+}
+
+div.edit-form {
+  margin-top: 30px;
+}
+
+/* ---- movie-info ---- */
+
+div.movie-info {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  padding: 0 30px;
+}
+
+div.header-div {
+  display: flex;
+  flex-direction: column;
+}
+
+div.movie-info-div {
+  display: flex;
+  justify-content: space-around;
+  padding: 40px 30px;
 }

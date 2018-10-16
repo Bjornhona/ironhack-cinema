@@ -5,23 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
-  <div><img src="<%= result.image %>"/></div>
-  <div class="movie-info">
-    <a href="/movies">Go back</a>
-    <h1><%= result.title %></h1>
-    <h2>Director: <%= result.director %></h2>
-    <h3>Stars</h3>
-    <ul>
-      <% result.stars.forEach(star => { %>
-        <li><%= star %></li>
-      <% }) %>
-      <p><%= result.description %></p>
-      <p><% result.showtimes.forEach(time => { %>
-        <%= time %> |
-      <% }) %> </p>
-    </ul>
+  <div class="movie-info-div">
+    <div class="header-div">
+      <div class="movie-pic"><img src="<%= result.image %>"/></div>
+      <a href="/movies" class="go-button">Go back</a>
+    </div>
+    <div class="movie-info">
+      <h2><%= result.title %></h2>
+      <h2>Director: <%= result.director %></h2>
+      <h3>Stars</h3>
+      <ul>
+        <% result.stars.forEach(star => { %>
+          <li><%= star %></li>
+        <% }) %>
+        <p><%= result.description %></p>
+        <p><% result.showtimes.forEach(time => { %>
+          <%= time %> |
+        <% }) %> </p>
+      </ul>
+    </div>
   </div>
+
 </body>
 </html>
