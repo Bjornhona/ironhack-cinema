@@ -2,8 +2,9 @@ var express = require('express');
 var router = express.Router();
 
 const mongoose = require('mongoose');
-const movieSchema = require('../models/Movie');
-const Movie = mongoose.model('Movie', movieSchema);
+const Movie = require('../models/Movie');
+const User = require('../models/User');
+// const ObjectId = mongoose.User.model('');
 
 // const Movie = require('../models/movie');
 
@@ -95,5 +96,31 @@ router.get('/:id', function(req, response) {
   });
 
 });
+
+router.post('/favorite', (req, res, next) => {
+  res.redirect('/movies');
+});
+
+router.post('/:id/favorites', (req, res, next) => {
+  const id = req.params.id;
+
+  User.findOne({userName: id})
+  .then(user => {
+    console.log(user);
+    user.favories.push(ObjectId(id));
+
+    User.save()
+      .then((success) => {
+        console.log('success', success);
+        res.redirect('/movies');
+      })
+      .catch(next);
+    })
+
+  .catch(err => {
+    console.log('Se ha producido un error', err);
+  });
+    
+})
 
 module.exports = router;

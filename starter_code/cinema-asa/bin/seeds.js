@@ -68,6 +68,7 @@ const movies = [
 const mongoose = require('mongoose');
 const movieSchema = require('../models/Movie');
 const Movie = mongoose.model('Movie', movieSchema);
+require('dotenv').config();
 
 mongoose.connect('mongodb://localhost/moviesApp')
 .then(() => {

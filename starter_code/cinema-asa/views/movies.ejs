@@ -13,13 +13,14 @@
     <p>Click on the movie to check the showtimes!</p>
   </div>
   <div class="movie-cards">
-    <% result.forEach(movie => { %>
+    <% result.forEach(item => { %>
       <div class="movie-card">
-        <div class="movie-pic"><img src="<%= movie.image %>"/></div>
-        <p><strong><%= movie.title %></strong></p>
-        <a href="/movies/<%= movie._id %>" class="go-button">See more</a>
-        <a href="/movies/<%= movie._id %>/edit">Edit</a>
-        <form action="/movies/<%= movie._id %>/delete" method="post">
+        <div class="movie-pic"><img src="<%= item.image %>"/></div>
+        <p><strong><%= item.title %></strong></p>
+        <a href="/movies/<%= item._id %>" class="go-button">See more</a>
+        <a href="/movies/<%= item._id %>/edit">Edit</a>
+        <% include partials/moviePartial.ejs %>
+        <form action="/movies/<%= item._id %>/delete" method="post">
           <input class="delete-button" type="submit" value="delete">
         </form>
       </div>
