@@ -1,3 +1,8 @@
+const mongoose = require('mongoose');
+const Movie = require('../models/Movie');
+
+require('dotenv').config();
+
 const movies = [
   {
     title : "A Wrinkle in Time",
@@ -64,11 +69,6 @@ const movies = [
     showtimes: ["13:00", "15:30", "18:00", "20:10", "22:40"]
   }
 ];
-
-const mongoose = require('mongoose');
-const movieSchema = require('../models/Movie');
-const Movie = mongoose.model('Movie', movieSchema);
-require('dotenv').config();
 
 mongoose.connect(process.env.MONGODB_URI)
 .then(() => {
