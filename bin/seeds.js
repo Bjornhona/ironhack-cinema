@@ -70,7 +70,7 @@ const movieSchema = require('../models/Movie');
 const Movie = mongoose.model('Movie', movieSchema);
 require('dotenv').config();
 
-mongoose.connect('mongodb://localhost/moviesApp')
+mongoose.connect(process.env.MONGODB_URI)
 .then(() => {
   console.log('Connected to Mongo!');
 
